@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block title %}Dataset{% endblock %}
+
+{% block content %}
+
+<h1>Construction Dataset</h1>
+
+<p>
+    Previous construction project data used for cost prediction.
+</p>
+
+<hr>
+
+<div class="table-container">
+
+    <table>
+        <thead>
+            <tr>
+                <th>Building Area</th>
+                <th>Floors</th>
+                <th>Material Cost</th>
+                <th>Labour Cost</th>
+                <th>Duration</th>
+                <th>Location</th>
+                <th>Total Cost</th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+        {% for row in data %}
+
+            <tr>
+                <td>{{ row['building_area'] }}</td>
+                <td>{{ row['floors'] }}</td>
+                <td>₹ {{ row['material_cost'] }}</td>
+                <td>₹ {{ row['labour_cost'] }}</td>
+                <td>{{ row['project_duration'] }} days</td>
+                <td>{{ row['location'] }}</td>
+                <td>₹ {{ row['total_cost'] }}</td>
+            </tr>
+
+        {% endfor %}
+
+        </tbody>
+    </table>
+
+</div>
+
+{% endblock %}
