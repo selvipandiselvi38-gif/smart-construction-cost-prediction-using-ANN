@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+
+{% block title %}Prediction Result{% endblock %}
+
+{% block content %}
+
+<h1>Construction Cost Prediction Result</h1>
+
+<div class="result-box">
+
+    <h2>Estimated Construction Cost</h2>
+
+    <h1>₹ {{ prediction }}</h1>
+
+    <hr>
+
+    <h3>Project Details</h3>
+
+    <p>
+        <b>Building Area:</b>
+        {{ project.building_area }} sq.ft
+    </p>
+
+    <p>
+        <b>Number of Floors:</b>
+        {{ project.floors }}
+    </p>
+
+    <p>
+        <b>Material Cost:</b>
+        ₹ {{ project.material_cost }}
+    </p>
+
+    <p>
+        <b>Labour Cost:</b>
+        ₹ {{ project.labour_cost }}
+    </p>
+
+    <p>
+        <b>Project Duration:</b>
+        {{ project.project_duration }} days
+    </p>
+
+    <p>
+        <b>Concrete Quantity:</b>
+        {{ project.concrete_quantity }} m³
+    </p>
+
+    <p>
+        <b>Steel Quantity:</b>
+        {{ project.steel_quantity }} tonnes
+    </p>
+
+    <p>
+        <b>BOQ Cost:</b>
+        ₹ {{ project.boq_cost }}
+    </p>
+
+    <p>
+        <b>BBS Cost:</b>
+        ₹ {{ project.bbs_cost }}
+    </p>
+
+    <p>
+        <b>Location:</b>
+        {{ project.location }}
+    </p>
+
+</div>
+
+<br>
+
+<a href="{{ url_for('predict') }}" class="btn">
+    Predict Another Project
+</a>
+
+<a href="{{ url_for('dashboard') }}" class="btn">
+    Back to Dashboard
+</a>
+
+{% endblock %}
