@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+
+{% block title %}Dashboard - Smart Construction Cost Prediction{% endblock %}
+
+{% block content %}
+
+<div class="dashboard">
+
+    <h1>Smart Construction Cost Prediction</h1>
+
+    <p>
+        Welcome to the Construction Cost Prediction Dashboard
+    </p>
+
+    <div class="cards">
+
+        <div class="card">
+            <h2>📊 Data Collection</h2>
+            <p>
+                Collect and manage previous construction project data.
+            </p>
+        </div>
+
+        <div class="card">
+            <h2>⚙️ Data Preprocessing</h2>
+            <p>
+                Clean and prepare construction data for ANN prediction.
+            </p>
+        </div>
+
+        <div class="card">
+            <h2>🧠 ANN Model Training</h2>
+            <p>
+                Artificial Neural Network learns patterns from project data.
+            </p>
+        </div>
+
+        <div class="card">
+            <h2>💰 Cost Prediction</h2>
+            <p>
+                Enter project details and predict the estimated construction cost.
+            </p>
+
+            <a href="{{ url_for('predict') }}" class="btn">
+                Predict Construction Cost
+            </a>
+        </div>
+
+        <div class="card">
+            <h2>📋 Result Analysis</h2>
+            <p>
+                View the predicted construction cost and project details.
+            </p>
+        </div>
+
+        <div class="card">
+            <h2>📁 Dataset</h2>
+            <p>
+                View the construction project dataset used by the system.
+            </p>
+
+            <a href="{{ url_for('dataset') }}" class="btn">
+                View Dataset
+            </a>
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}
