@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+<div class="hero">
+
+    <h1>Smart Construction Cost Prediction Using ANN</h1>
+
+    <p>
+        Predict the estimated construction cost using
+        Artificial Neural Network.
+    </p>
+
+    <p>
+        Enter construction project details and get a
+        quick cost estimation.
+    </p>
+
+    {% if session.get('logged_in') %}
+
+        <a href="{{ url_for('dashboard') }}" class="btn">
+            Go to Dashboard
+        </a>
+
+    {% else %}
+
+        <a href="{{ url_for('login') }}" class="btn">
+            Login
+        </a>
+
+    {% endif %}
+
+</div>
+
+<hr>
+
+<h2>Project Modules</h2>
+
+<div class="cards">
+
+    <div class="card">
+        <h3>Data Collection</h3>
+        <p>Collect previous construction project data.</p>
+    </div>
+
+    <div class="card">
+        <h3>Data Preprocessing</h3>
+        <p>Clean and prepare the collected data.</p>
+    </div>
+
+    <div class="card">
+        <h3>ANN Model Training</h3>
+        <p>Train the Artificial Neural Network.</p>
+    </div>
+
+    <div class="card">
+        <h3>Cost Prediction</h3>
+        <p>Predict the estimated construction cost.</p>
+    </div>
+
+    <div class="card">
+        <h3>Result Analysis</h3>
+        <p>View and analyze the prediction result.</p>
+    </div>
+
+</div>
+
+{% endblock %}
