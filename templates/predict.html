@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% block title %}Cost Prediction{% endblock %}
+
+{% block content %}
+
+<h1>Construction Cost Prediction</h1>
+
+<p>Enter the construction project details below.</p>
+
+<form method="POST">
+
+    <label>Building Area (sq.ft)</label>
+    <input type="number" name="building_area" required>
+
+    <label>Number of Floors</label>
+    <input type="number" name="floors" required>
+
+    <label>Material Cost (₹)</label>
+    <input type="number" name="material_cost" required>
+
+    <label>Labour Cost (₹)</label>
+    <input type="number" name="labour_cost" required>
+
+    <label>Project Duration (days)</label>
+    <input type="number" name="project_duration" required>
+
+    <label>Concrete Quantity (m³)</label>
+    <input type="number" step="0.01" name="concrete_quantity" required>
+
+    <label>Steel Quantity (tonnes)</label>
+    <input type="number" step="0.01" name="steel_quantity" required>
+
+    <label>BOQ Cost (₹)</label>
+    <input type="number" name="boq_cost" required>
+
+    <label>BBS Cost (₹)</label>
+    <input type="number" name="bbs_cost" required>
+
+    <label>Location</label>
+    <select name="location" required>
+        <option value="">Select Location</option>
+        <option value="Chennai">Chennai</option>
+        <option value="Coimbatore">Coimbatore</option>
+        <option value="Madurai">Madurai</option>
+        <option value="Trichy">Trichy</option>
+        <option value="Salem">Salem</option>
+    </select>
+
+    <br><br>
+
+    <button type="submit" class="btn">
+        Predict Construction Cost
+    </button>
+
+</form>
+
+{% endblock %}
