@@ -1,1 +1,46 @@
-{% extends "base.html" %}{% block title %}Dataset{% endblock %}{% block content %}<h1>Construction Dataset</h1><p>Showing first 50 of {{ total }} demo records.</p><div class="table-wrap"><table><thead><tr>{% for c in columns %}<th>{{ c }}</th>{% endfor %}</tr></thead><tbody>{% for row in rows %}<tr>{% for c in columns %}<td>{{ row[c] }}</td>{% endfor %}</tr>{% endfor %}</tbody></table></div>{% endblock %}
+{% extends "base.html" %}
+{% block title %}Dataset{% endblock %}
+
+{% block content %}
+
+<h1>Construction Dataset</h1>
+
+<p>Previous construction project data used for cost prediction.</p>
+
+<hr>
+
+<div class="table-container">
+
+<table>
+
+<thead>
+<tr>
+{% for column in columns %}
+    <th>{{ column }}</th>
+{% endfor %}
+</tr>
+</thead>
+
+<tbody>
+
+{% for row in rows %}
+
+<tr>
+
+{% for column in columns %}
+    <td>{{ row[column] }}</td>
+{% endfor %}
+
+</tr>
+
+{% endfor %}
+
+</tbody>
+
+</table>
+
+</div>
+
+<p><b>Total records:</b> {{ total }}</p>
+
+{% endblock %}
