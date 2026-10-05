@@ -10,61 +10,21 @@
 
     <h2>Estimated Construction Cost</h2>
 
-    <h1>₹ {{ prediction }}</h1>
+    <h1>₹ {{ "%.2f"|format(prediction) }}</h1>
+
+    <p>
+        <b>Generated:</b> {{ generated_at }}
+    </p>
 
     <hr>
 
     <h3>Project Details</h3>
 
-    <p>
-        <b>Building Area:</b>
-        {{ project.building_area }} sq.ft
-    </p>
-
-    <p>
-        <b>Number of Floors:</b>
-        {{ project.floors }}
-    </p>
-
-    <p>
-        <b>Material Cost:</b>
-        ₹ {{ project.material_cost }}
-    </p>
-
-    <p>
-        <b>Labour Cost:</b>
-        ₹ {{ project.labour_cost }}
-    </p>
-
-    <p>
-        <b>Project Duration:</b>
-        {{ project.project_duration }} days
-    </p>
-
-    <p>
-        <b>Concrete Quantity:</b>
-        {{ project.concrete_quantity }} m³
-    </p>
-
-    <p>
-        <b>Steel Quantity:</b>
-        {{ project.steel_quantity }} tonnes
-    </p>
-
-    <p>
-        <b>BOQ Cost:</b>
-        ₹ {{ project.boq_cost }}
-    </p>
-
-    <p>
-        <b>BBS Cost:</b>
-        ₹ {{ project.bbs_cost }}
-    </p>
-
-    <p>
-        <b>Location:</b>
-        {{ project.location }}
-    </p>
+    {% for key, value in inputs.items() %}
+        <p>
+            <b>{{ key }}:</b> {{ value }}
+        </p>
+    {% endfor %}
 
 </div>
 
@@ -76,6 +36,10 @@
 
 <a href="{{ url_for('dashboard') }}" class="btn">
     Back to Dashboard
+</a>
+
+<a href="{{ url_for('download_report') }}" class="btn">
+    Download Report
 </a>
 
 {% endblock %}
